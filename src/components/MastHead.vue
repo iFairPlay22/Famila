@@ -14,7 +14,7 @@
       height="100%"
       class="d-flex justify-center align-center"
     >
-      <v-img height="60px" width="60px" src="@/assets/logo.jpg"></v-img>
+      <v-img height="60px" width="60px" src="@/assets/logo.png"></v-img>
       <v-card-title class="ml-3 black--text custom-bar-title text-break"
         >David & Ewen</v-card-title
       >

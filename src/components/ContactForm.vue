@@ -85,7 +85,7 @@ export default {
           message: "",
         },
         rules: {
-          name: [(v) => !!v || "E-mail is required"],
+          name: [(v) => !!v || "Name is required"],
           email: [
             (v) => !!v || "E-mail is required",
             (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
@@ -145,10 +145,10 @@ export default {
             this.$refs["form"].reset();
           }
         })
-        .catch((error) => {
-          this.snackbar.ok = false;
-          console.log(error);
-        })
+        // .catch((error) => {
+        //   this.snackbar.ok = false;
+        //   console.log(error);
+        // })
         .finally(() => {
           this.snackbar.active = true;
         });
