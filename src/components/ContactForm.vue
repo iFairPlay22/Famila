@@ -119,7 +119,7 @@ export default {
           user_id: "user_wl0Ew9bwIay0RJlT6sIbx",
           template_params: {
             owner_name: "David Bouquet",
-            owner_email: "ewen.bouquet@gmail.com", // "davidbouquet.musique@gmail.com",
+            owner_email: "davidbouquet.musique@gmail.com",
             client_name: this.form.data.name,
             client_email: this.form.data.email,
             client_phone: this.form.data.phone,
