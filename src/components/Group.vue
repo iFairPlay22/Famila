@@ -13,6 +13,7 @@
         color="transparent"
         v-for="({ img, name, role }, i) in team"
         :key="i"
+        :width="imageDimentions"
         min-width="300px"
         class="ma-10"
       >
@@ -20,7 +21,9 @@
           :src="img"
           :width="imageDimentions"
           :height="imageDimentions"
-          position="cover"
+          min-width="300px"
+          min-height="300px"
+          position="contains"
         />
         <v-card-title
           class="black--text d-flex justify-center display-1 text-break"
@@ -48,7 +51,7 @@ export default {
   computed: {
     imageDimentions() {
       return this.windowWidth / (this.team.length + 1);
-    },
+    }
   },
   data() {
     return {
@@ -57,14 +60,14 @@ export default {
         {
           img: require("@/assets/team/David.jpg"),
           name: "David Bouquet",
-          role: "Chanteur",
+          role: "Chanteur"
         },
         {
           img: require("@/assets/team/Ewen.jpg"),
           name: "Ewen Bouquet",
-          role: "Guitariste",
-        },
-      ],
+          role: "Guitariste"
+        }
+      ]
     };
   },
   methods: {
@@ -75,7 +78,7 @@ export default {
       if (link !== "") {
         window.open(link, "_blank");
       }
-    },
-  },
+    }
+  }
 };
 </script>
