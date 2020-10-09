@@ -6,7 +6,7 @@
     <v-form
       ref="form"
       v-model="isValid"
-      class="d-flex flex-column justift-space-around"
+      class="d-flex flex-column justify-space-around"
     >
       <v-text-field
         v-model="form.data.name"
@@ -31,13 +31,7 @@
         placeholder="Votre demande"
         required
       ></v-textarea
-      ><v-btn
-        class="mt-88"
-        tile
-        color="success"
-        @click="sendForm"
-        :disabled="!isValid"
-      >
+      ><v-btn tile color="success" @click="sendForm" :disabled="!isValid">
         <v-icon left>
           mdi-pencil
         </v-icon>
@@ -75,38 +69,38 @@ export default {
           this.snackbar.ok
             ? "Votre demande a bien été prise en compte."
             : "Votre demande n'a pas été prise en compte",
-        color: () => (this.snackbar.ok ? "green" : "red"),
+        color: () => (this.snackbar.ok ? "green" : "red")
       },
       form: {
         data: {
           name: "",
           email: "",
           phone: "",
-          message: "",
+          message: ""
         },
         rules: {
-          name: [(v) => !!v || "Name is required"],
+          name: [v => !!v || "Name is required"],
           email: [
-            (v) => !!v || "E-mail is required",
-            (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+            v => !!v || "E-mail is required",
+            v => /.+@.+\..+/.test(v) || "E-mail must be valid"
           ],
           phone: [
-            (v) => !!v || "Phone is required",
-            (v) =>
+            v => !!v || "Phone is required",
+            v =>
               /(^0[0-9]{9}$)|(^0[0-9]( [0-9]{2}){4}$)/.test(v) ||
-              "Phone must be a valid phone",
+              "Phone must be a valid phone"
           ],
           message: [
-            (v) => !!v || "Message is required",
-            (v) =>
+            v => !!v || "Message is required",
+            v =>
               (v && 20 <= v.length) ||
               "Message must be less than 20 characters",
-            (v) =>
+            v =>
               (v && v.length <= 500) ||
-              "Message must be less than 500 characters",
-          ],
-        },
-      },
+              "Message must be less than 500 characters"
+          ]
+        }
+      }
     };
   },
   methods: {
@@ -117,7 +111,7 @@ export default {
         mode: "cors",
         method: "POST",
         headers: {
-          "Content-type": "application/json",
+          "Content-type": "application/json"
         },
         body: JSON.stringify({
           service_id: "service_b3qh7ej",
@@ -129,18 +123,18 @@ export default {
             client_name: this.form.data.name,
             client_email: this.form.data.email,
             client_phone: this.form.data.phone,
-            client_message: this.form.data.message,
-          },
-        }),
+            client_message: this.form.data.message
+          }
+        })
       })
-        .then((response) => {
+        .then(response => {
           this.snackbar.ok = response.ok;
           if (response.ok) {
             this.form.data = {
               name: "",
               email: "",
               phone: "",
-              message: "",
+              message: ""
             };
             this.$refs["form"].reset();
           }
@@ -152,7 +146,7 @@ export default {
         .finally(() => {
           this.snackbar.active = true;
         });
-    },
-  },
+    }
+  }
 };
 </script>
