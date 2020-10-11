@@ -27,7 +27,7 @@ export default {
     Video,
     Group,
     How,
-    ContactForm,
-  },
+    ContactForm
+  }
 };
 </script>

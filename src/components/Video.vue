@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-layout row>
-      <v-col cols="10" offset="1" offset-sm="1" sm="10">
+      <v-col offset-lg="1" lg="10" offset-md="1" md="10" offset-sm="0" sm="12">
         <v-card
           flat
           color="transparent"
@@ -28,6 +28,6 @@
 
 <script>
 export default {
-  name: "Video",
+  name: "Video"
 };
 </script>

@@ -14,15 +14,12 @@
         v-for="({ img, name, role }, i) in team"
         :key="i"
         :width="imageDimentions"
-        min-width="300px"
         class="ma-10"
       >
         <v-img
           :src="img"
           :width="imageDimentions"
           :height="imageDimentions"
-          min-width="300px"
-          min-height="300px"
           position="contains"
         />
         <v-card-title
@@ -50,6 +47,7 @@ export default {
   },
   computed: {
     imageDimentions() {
+      if (this.windowWidth < 700) return (2 / 3) * this.windowWidth;
       return this.windowWidth / (this.team.length + 1);
     }
   },

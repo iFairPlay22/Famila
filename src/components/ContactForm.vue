@@ -6,7 +6,7 @@
     <v-form
       ref="form"
       v-model="isValid"
-      class="d-flex flex-column justify-space-around"
+      class="d-flex flex-column justify-space-around mx-5"
     >
       <v-text-field
         v-model="form.data.name"
