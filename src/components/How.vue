@@ -48,22 +48,16 @@ export default {
             "Remplissez le formulaire ci-dessous ou contactez nous sur les réseaux sociaux. Décrivez nous votre besoin."
         },
         {
-          img: require("@/assets/how/2.png"),
+          img: require("@/assets/how/3.png"),
           title: "Traitement de la demande",
           text:
-            "Nous allons prendre en considération votre demande et réfléchir à sa faisabilité."
-        },
-        {
-          img: require("@/assets/how/3.png"),
-          title: "Prise de contact",
-          text:
-            "Nous allons prendre contact avec vous afin de planifier une prestation."
+            "Nous allons prendre en considération votre demande puis revenir vers vous."
         },
         {
           img: require("@/assets/how/4.png"),
           title: "Prestation",
           text:
-            "Il est maintenant temps de vous rencontrer, de vous faire chanter et danser ! :)"
+            "C'est le jour J, il est temps de vous faire chanter et danser ! :)"
         }
       ]
     };

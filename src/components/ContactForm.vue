@@ -33,9 +33,9 @@
       ></v-textarea
       ><v-btn tile color="success" @click="sendForm" :disabled="!isValid">
         <v-icon left>
-          mdi-pencil
+          mdi-send
         </v-icon>
-        Edit
+        Envoyer
       </v-btn></v-form
     >
     <v-snackbar v-model="snackbar.active" :timeout="snackbar.timeout">
@@ -79,25 +79,20 @@ export default {
           message: ""
         },
         rules: {
-          name: [v => !!v || "Name is required"],
+          name: [v => !!v || "Nom obligatoire"],
           email: [
-            v => !!v || "E-mail is required",
-            v => /.+@.+\..+/.test(v) || "E-mail must be valid"
+            v => !!v || "Email obligatoire",
+            v => /.+@.+\..+/.test(v) || "L'email saisi n'est pas valide"
           ],
           phone: [
-            v => !!v || "Phone is required",
             v =>
-              /(^0[0-9]{9}$)|(^0[0-9]( [0-9]{2}){4}$)/.test(v) ||
-              "Phone must be a valid phone"
+              /(^$)|(^0[0-9]{9}$)|(^0[0-9]( [0-9]{2}){4}$)/.test(v) ||
+              "Le numéro de téléphone saisi n'est pas valide"
           ],
           message: [
-            v => !!v || "Message is required",
-            v =>
-              (v && 20 <= v.length) ||
-              "Message must be less than 20 characters",
-            v =>
-              (v && v.length <= 500) ||
-              "Message must be less than 500 characters"
+            v => !!v || "Message obligatoire",
+            v => (v && 20 <= v.length) || "Le message est trop court",
+            v => (v && v.length <= 3000) || "Le message est trop long"
           ]
         }
       }
