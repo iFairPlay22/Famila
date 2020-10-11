@@ -14,15 +14,16 @@
           <v-card-title
             class="mb-6 d-flex flex-column text-uppercase text-break display-3"
           >
-            pop / rock
+            Famila
           </v-card-title>
-          <v-card-text class="pb-0 text-justify text-break body-1"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Et dolore magna aliqua</v-card-text
+          <v-card-text class="pb-0 text-justify text-break body-1 "
+            >Vous vous mariez ? Vous organisez un événement familial ou privé ?
+            Vous cherchez des musiciens pour votre bar, votre restaurant ?<br />
+            Famila, duo acoustique guitare-voix, vous propose d’animer vos
+            réceptions et soirées avec des chansons françaises et
+            internationales. <br />Des années 60 à nos jours, Famila apportera
+            l’accompagnement musical pour que vos invités ou clients passent un
+            excellent moment.</v-card-text
           >
         </v-card>
       </v-col>

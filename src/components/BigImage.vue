@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-layout row>
       <v-col offset-lg="2" lg="8" offset-md="1" md="10" offset-sm="1" sm="10">
-        <v-img src="@/assets/bigimage/group2.jpg" />
+        <v-img src="@/assets/bigimage/group.jpg" />
       </v-col>
     </v-layout>
   </v-container>
@@ -10,6 +10,6 @@
 
 <script>
 export default {
-  name: "BigImage",
+  name: "BigImage"
 };
 </script>

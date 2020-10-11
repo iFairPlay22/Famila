@@ -14,9 +14,14 @@
       height="100%"
       class="d-flex justify-center align-center"
     >
-      <v-img height="60px" width="60px" src="@/assets/logo.png"></v-img>
+      <v-img
+        height="80px"
+        width="80px"
+        position="contains"
+        src="@/assets/logo.png"
+      ></v-img>
       <v-card-title class="ml-3 black--text custom-bar-title text-break"
-        >David & Ewen</v-card-title
+        >Groupe Famila</v-card-title
       >
     </v-card>
     <div class="flex-grow-1"></div>
@@ -39,13 +44,13 @@ export default {
       icons: [
         {
           icon: "mdi-facebook",
-          link: "https://www.facebook.com/profile.php?id=100010179343624",
+          link: "https://www.facebook.com/profile.php?id=100010179343624"
         },
         {
           icon: "mdi-youtube",
-          link: "https://www.youtube.com/channel/UC6MiPufXFdZiqtYQyoeWYYg",
-        },
-      ],
+          link: "https://www.youtube.com/channel/UC6MiPufXFdZiqtYQyoeWYYg"
+        }
+      ]
     };
   },
   methods: {
@@ -53,7 +58,7 @@ export default {
       if (link !== "") {
         window.open(link, "_blank");
       }
-    },
-  },
+    }
+  }
 };
 </script>
