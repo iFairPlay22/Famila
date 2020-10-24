@@ -56,14 +56,14 @@ export default {
       windowWidth: window.innerWidth,
       team: [
         {
-          img: require("@/assets/team/David.jpg"),
-          name: "David Bouquet",
-          role: "Chanteur"
-        },
-        {
           img: require("@/assets/team/Ewen.jpg"),
           name: "Ewen Bouquet",
           role: "Guitariste"
+        },
+        {
+          img: require("@/assets/team/David.jpg"),
+          name: "David Bouquet",
+          role: "Chanteur"
         }
       ]
     };
