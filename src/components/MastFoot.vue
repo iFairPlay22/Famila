@@ -30,12 +30,12 @@ export default {
         {
           title: "Facebook",
           icon: "mdi-facebook",
-          link: "https://www.facebook.com/profile.php?id=100010179343624",
+          link: "https://www.facebook.com/familamusique/",
         },
         {
           title: "Youtube",
           icon: "mdi-youtube",
-          link: "https://www.youtube.com/channel/UC6MiPufXFdZiqtYQyoeWYYg",
+          link: "https://www.youtube.com/channel/UCMswW4S2kno9IwZO-qXualw",
         },
       ],
     };
