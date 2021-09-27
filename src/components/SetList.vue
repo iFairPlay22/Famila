@@ -118,7 +118,11 @@ export default {
       )
         showed.push(this.songs[i]);
 
-        console.log(startIndex, lastIndex)
+      console.log(this.songs);
+
+      console.log(startIndex, lastIndex);
+
+      console.log(showed);
 
       return showed;
     },
