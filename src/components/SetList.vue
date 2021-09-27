@@ -111,7 +111,16 @@ export default {
         (this.pagination.currentPage - 1) * this.pagination.resultsByPage;
       const lastIndex = startIndex + this.pagination.resultsByPage;
 
-  console.log(this.pagination.currentPage, this.pagination.resultsByPage, startIndex, lastIndex, this.songs)
+      alert(this.pagination.currentPage);
+      alert(this.pagination.resultsByPage);
+
+      console.log(
+        this.pagination.currentPage,
+        this.pagination.resultsByPage,
+        startIndex,
+        lastIndex,
+        this.songs
+      );
       return this.songs.slice(startIndex, lastIndex);
     },
     nbPages() {
