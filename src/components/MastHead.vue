@@ -20,9 +20,11 @@
         position="contains"
         src="@/assets/logo.png"
       ></v-img>
-      <v-card-title class="ml-3 black--text custom-bar-title text-break"
-        >Groupe Famila</v-card-title
+      <v-card-title
+        class="d-none d-sm-block ml-3 black--text custom-bar-title text-break"
       >
+        Groupe Famila
+      </v-card-title>
     </v-card>
     <div class="flex-grow-1"></div>
     <v-btn
@@ -39,20 +41,7 @@
 <script>
 export default {
   name: "MastHead",
-  data() {
-    return {
-      icons: [
-        {
-          icon: "mdi-facebook",
-          link: "https://www.facebook.com/familamusique/"
-        },
-        {
-          icon: "mdi-youtube",
-          link: "https://www.youtube.com/channel/UCMswW4S2kno9IwZO-qXualw"
-        }
-      ]
-    };
-  },
+  props: ["icons"],
   methods: {
     redirect(link) {
       if (link !== "") {

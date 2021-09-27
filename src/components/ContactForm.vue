@@ -1,63 +1,74 @@
 <template>
-  <v-card flat color="transparent" class="my-8">
-    <v-card-title class="custom-title text-center mb-5 text-break">
-      Formulaire de contact
-    </v-card-title>
-    <v-form
-      ref="form"
-      v-model="isValid"
-      class="d-flex flex-column justify-space-around mx-5"
-    >
-      <v-text-field
-        v-model="form.data.name"
-        :rules="form.rules.name"
-        placeholder="Votre nom"
-        required
-      />
-      <v-text-field
-        v-model="form.data.email"
-        :rules="form.rules.email"
-        placeholder="Votre email"
-        required
-      />
-      <v-text-field
-        v-model="form.data.phone"
-        :rules="form.rules.phone"
-        placeholder="Votre numéro de téléphone"
-      />
-      <v-textarea
-        v-model="form.data.message"
-        :rules="form.rules.message"
-        placeholder="Votre demande"
-        required
-      />
-      <v-btn
-        tile
-        color="rgba(0, 0, 0, .15)"
-        @click="sendForm"
-        :disabled="!isValid"
+  <v-container fluid>
+    <v-layout row>
+      <v-col
+        offset-lg="3"
+        lg="6"
+        offset-sm="1"
+        sm="10"
+        offset="0"
+        cols="12"
+        class="pb-0"
       >
-        <v-icon left>
-          mdi-email-send-outline
-        </v-icon>
-        Envoyer
-      </v-btn>
-    </v-form>
-    <v-snackbar v-model="snackbar.active" :timeout="snackbar.timeout">
-      {{ snackbar.text() }}
+        <v-card flat color="transparent" class="my-8">
+          <v-card-title
+            class="d-block custom-title text-center mb-5 text-break"
+          >
+            Contactez nous !
+          </v-card-title>
+          <v-form
+            ref="form"
+            v-model="isValid"
+            class="d-flex flex-column justify-space-around mx-5"
+          >
+            <v-text-field
+              v-model="form.data.name"
+              :rules="form.rules.name"
+              placeholder="Votre nom"
+              required
+            />
+            <v-text-field
+              v-model="form.data.email"
+              :rules="form.rules.email"
+              placeholder="Votre email"
+              required
+            />
+            <v-text-field
+              v-model="form.data.phone"
+              :rules="form.rules.phone"
+              placeholder="Votre numéro de téléphone"
+            />
+            <v-textarea
+              v-model="form.data.message"
+              :rules="form.rules.message"
+              placeholder="Votre demande"
+              required
+            />
+            <v-btn tile color="#1976d2" @click="sendForm" :disabled="!isValid">
+              <v-icon left>
+                mdi-email-send-outline
+              </v-icon>
+              Envoyer
+            </v-btn>
+          </v-form>
+          <v-snackbar v-model="snackbar.active" :timeout="snackbar.timeout">
+            {{ snackbar.text() }}
 
-      <template v-slot:action="{ attrs }">
-        <v-btn
-          :color="snackbar.color()"
-          text
-          v-bind="attrs"
-          @click="snackbar.active = false"
-        >
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>
-  </v-card>
+            <template v-slot:action="{ attrs }">
+              <v-btn
+                :color="snackbar.color()"
+                text
+                v-bind="attrs"
+                @click="snackbar.active = false"
+              >
+                Close
+              </v-btn>
+            </template>
+          </v-snackbar>
+        </v-card>
+      </v-col>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>

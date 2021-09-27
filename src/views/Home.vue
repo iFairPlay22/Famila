@@ -6,6 +6,7 @@
     <BigImage />
     <Video />
     <Group />
+    <SetList />
     <How />
     <ContactForm />
   </v-card>
@@ -16,6 +17,7 @@ import Description from "@/components/Description.vue";
 import BigImage from "@/components/BigImage.vue";
 import Video from "@/components/Video.vue";
 import Group from "@/components/Group.vue";
+import SetList from "@/components/SetList.vue";
 import How from "@/components/How.vue";
 import ContactForm from "@/components/ContactForm.vue";
 
@@ -26,6 +28,7 @@ export default {
     BigImage,
     Video,
     Group,
+    SetList,
     How,
     ContactForm
   }

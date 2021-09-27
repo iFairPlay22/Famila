@@ -1,7 +1,7 @@
 <template>
   <v-card flat color="transparent">
     <v-card-title class="d-block custom-title text-center">
-      Le groupe
+      Un duo père / fils
     </v-card-title>
 
     <v-container fluid>

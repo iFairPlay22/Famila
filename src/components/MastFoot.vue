@@ -14,9 +14,7 @@
       @click="redirect(link)"
     >
       <span class="subtitle-1 black--text">{{ title }}</span>
-      <!-- black -->
       <v-icon class="black--text">{{ icon }}</v-icon>
-      <!-- black -->
     </v-btn>
   </v-bottom-navigation>
 </template>
@@ -24,28 +22,13 @@
 <script>
 export default {
   name: "MastFoot",
-  data() {
-    return {
-      icons: [
-        {
-          title: "Facebook",
-          icon: "mdi-facebook",
-          link: "https://www.facebook.com/familamusique/",
-        },
-        {
-          title: "Youtube",
-          icon: "mdi-youtube",
-          link: "https://www.youtube.com/channel/UCMswW4S2kno9IwZO-qXualw",
-        },
-      ],
-    };
-  },
+  props: ["icons"],
   methods: {
     redirect(link) {
       if (link !== "") {
         window.open(link, "_blank");
       }
-    },
-  },
+    }
+  }
 };
 </script>

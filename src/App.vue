@@ -1,12 +1,12 @@
 <template>
   <v-app>
-    <mast-head />
+    <mast-head :icons="icons" />
 
     <v-content>
       <router-view />
     </v-content>
 
-    <mast-foot />
+    <mast-foot :icons="icons" />
   </v-app>
 </template>
 
@@ -19,6 +19,22 @@ export default {
   components: {
     MastHead,
     MastFoot
+  },
+  data() {
+    return {
+      icons: [
+        {
+          title: "Facebook",
+          icon: "mdi-facebook",
+          link: "https://www.facebook.com/familamusique/"
+        },
+        {
+          title: "Youtube",
+          icon: "mdi-youtube",
+          link: "https://www.youtube.com/channel/UCMswW4S2kno9IwZO-qXualw"
+        }
+      ]
+    };
   }
 };
 </script>
