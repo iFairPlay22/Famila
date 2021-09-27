@@ -37,11 +37,8 @@
         offset="0"
         cols="12"
       >
-        <script>
-          console.log({{id}});
-        </script>
         <!-- Song -->
-        <div>
+        <div :key="id">
           <v-divider></v-divider>
           <v-list-item class="grow">
             <v-list-item-avatar
@@ -73,6 +70,7 @@
           v-model="pagination.currentPage"
           :total-visible="pagination.resultsByPage"
           :length="nbPages"
+          @input="updateShowedSongs"
         >
         </v-pagination>
       </v-col>
@@ -93,7 +91,8 @@ export default {
         resultsByPage: 5
       },
       search: "",
-      songs: []
+      songs: [],
+      showedSongs: []
     };
   },
   methods: {
@@ -106,21 +105,24 @@ export default {
       )
         .then(response => response.json())
         .then(json => (this.songs = json))
+        .then(() => this.updateShowedSongs())
         .catch(e => console.error(e));
-    }
-  },
-  computed: {
-    showedSongs() {
-      if (this.songs.length == 0) return [];
+    },
+    updateShowedSongs() {
+      console.log("updateShowedSongs")
+      if (this.songs.length == 0) {
+        this.showedSongs = [];
+        return;
+      }
 
       const startIndex =
         (this.pagination.currentPage - 1) * this.pagination.resultsByPage;
       const lastIndex = startIndex + this.pagination.resultsByPage;
 
-      console.log(this.songs.slice(startIndex, lastIndex));
-
-      return this.songs.slice(startIndex, lastIndex);
-    },
+      this.showedSongs = this.songs.slice(startIndex, lastIndex);
+    }
+  },
+  computed: {
     nbPages() {
       return Math.floor(this.songs.length / this.pagination.resultsByPage) + 1;
     }
