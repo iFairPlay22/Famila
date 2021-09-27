@@ -28,8 +28,8 @@
     <!-- Results -->
     <v-layout row>
       <v-col
-        v-for="({ songName, groupName }, i) in showedSongs"
-        :key="i"
+        v-for="(showedSong, id) in showedSongs"
+        :key="id"
         offset-md="3"
         md="6"
         offset-sm="2"
@@ -37,6 +37,9 @@
         offset="0"
         cols="12"
       >
+        <script>
+          console.log({{id}});
+        </script>
         <!-- Song -->
         <div>
           <v-divider></v-divider>
@@ -49,8 +52,12 @@
             </v-list-item-avatar>
 
             <v-list-item-title class="d-flex d-lg-block flex-column my-2">
-              <span class="title text-wrap"> {{ songName }}</span>
-              <span class="subtitle text-wrap"> {{ groupName }}</span>
+              <span class="title text-wrap">
+                {{ showedSong.songName }}
+              </span>
+              <span class="subtitle text-wrap">
+                {{ showedSong.groupName }}
+              </span>
             </v-list-item-title>
           </v-list-item>
           <v-divider></v-divider>
@@ -110,21 +117,9 @@ export default {
         (this.pagination.currentPage - 1) * this.pagination.resultsByPage;
       const lastIndex = startIndex + this.pagination.resultsByPage;
 
-      let showed = [];
-      for (
-        let i = startIndex;
-        i < lastIndex && 0 <= i && i < this.songs.length;
-        i++
-      )
-        showed.push(this.songs[i]);
+      console.log(this.songs.slice(startIndex, lastIndex));
 
-      console.log(this.songs);
-
-      console.log(startIndex, lastIndex);
-
-      console.log(showed);
-
-      return showed;
+      return this.songs.slice(startIndex, lastIndex);
     },
     nbPages() {
       return Math.floor(this.songs.length / this.pagination.resultsByPage) + 1;
