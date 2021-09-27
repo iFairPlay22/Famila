@@ -27,39 +27,32 @@
 
     <!-- Results -->
     <v-layout row>
-      <v-col
-        v-for="(showedSong, id) in showedSongs"
-        :key="id"
-        offset-md="3"
-        md="6"
-        offset-sm="2"
-        sm="8"
-        offset="0"
-        cols="12"
-      >
-        <!-- Song -->
-        <div :key="id">
-          <v-divider></v-divider>
-          <v-list-item class="grow">
-            <v-list-item-avatar
-              class="d-none d-sm-block ma-0"
-              color="transparent"
-            >
-              <v-icon icon color="black">mdi-music-note-eighth</v-icon>
-            </v-list-item-avatar>
+      <div v-for="(showedSong, id) in showedSongs" :key="id">
+        <v-col offset-md="3" md="6" offset-sm="2" sm="8" offset="0" cols="12">
+          <!-- Song -->
+          <div :key="id">
+            <v-divider></v-divider>
+            <v-list-item class="grow">
+              <v-list-item-avatar
+                class="d-none d-sm-block ma-0"
+                color="transparent"
+              >
+                <v-icon icon color="black">mdi-music-note-eighth</v-icon>
+              </v-list-item-avatar>
 
-            <v-list-item-title class="d-flex d-lg-block flex-column my-2">
-              <span class="title text-wrap">
-                {{ showedSong.songName }}
-              </span>
-              <span class="subtitle text-wrap">
-                {{ showedSong.groupName }}
-              </span>
-            </v-list-item-title>
-          </v-list-item>
-          <v-divider></v-divider>
-        </div>
-      </v-col>
+              <v-list-item-title class="d-flex d-lg-block flex-column my-2">
+                <span class="title text-wrap">
+                  {{ showedSong.songName }}
+                </span>
+                <span class="subtitle text-wrap">
+                  {{ showedSong.groupName }}
+                </span>
+              </v-list-item-title>
+            </v-list-item>
+            <v-divider></v-divider>
+          </div>
+        </v-col>
+      </div>
     </v-layout>
 
     <!-- Pagination -->
@@ -109,7 +102,7 @@ export default {
         .catch(e => console.error(e));
     },
     updateShowedSongs() {
-      console.log("updateShowedSongs")
+      console.log("updateShowedSongs");
       if (this.songs.length == 0) {
         this.showedSongs = [];
         return;
