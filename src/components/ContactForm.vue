@@ -1,8 +1,8 @@
 <template>
   <v-card flat color="transparent" class="my-8">
-    <v-card-title class="custom-title text-center mb-5 text-break"
-      >Formulaire de contact</v-card-title
-    >
+    <v-card-title class="custom-title text-center mb-5 text-break">
+      Formulaire de contact
+    </v-card-title>
     <v-form
       ref="form"
       v-model="isValid"
@@ -13,31 +13,36 @@
         :rules="form.rules.name"
         placeholder="Votre nom"
         required
-      ></v-text-field>
+      />
       <v-text-field
         v-model="form.data.email"
         :rules="form.rules.email"
         placeholder="Votre email"
         required
-      ></v-text-field>
+      />
       <v-text-field
         v-model="form.data.phone"
         :rules="form.rules.phone"
         placeholder="Votre numéro de téléphone"
-      ></v-text-field>
+      />
       <v-textarea
         v-model="form.data.message"
         :rules="form.rules.message"
         placeholder="Votre demande"
         required
-      ></v-textarea
-      ><v-btn tile color="success" @click="sendForm" :disabled="!isValid">
+      />
+      <v-btn
+        tile
+        color="rgba(0, 0, 0, .15)"
+        @click="sendForm"
+        :disabled="!isValid"
+      >
         <v-icon left>
-          mdi-send
+          mdi-email-send-outline
         </v-icon>
         Envoyer
-      </v-btn></v-form
-    >
+      </v-btn>
+    </v-form>
     <v-snackbar v-model="snackbar.active" :timeout="snackbar.timeout">
       {{ snackbar.text() }}
 
@@ -134,10 +139,6 @@ export default {
             this.$refs["form"].reset();
           }
         })
-        // .catch((error) => {
-        //   this.snackbar.ok = false;
-        //   console.log(error);
-        // })
         .finally(() => {
           this.snackbar.active = true;
         });

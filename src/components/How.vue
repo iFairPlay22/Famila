@@ -1,38 +1,39 @@
 <template>
-  <div class="d-flex justify-space-around align-center">
-    <v-card
-      flat
-      color="transparent"
-      class="d-flex flex-column align-center justify-center my-3"
-    >
-      <v-card-title class="custom-title text-center mb-5 text-break"
-        >Comment ça marche ?</v-card-title
-      >
-      <v-card
-        flat
-        color="transparent"
-        class="d-flex flex-row justify-space-around align-start flex-wrap"
-      >
-        <v-card
-          flat
-          color="transparent"
+  <v-card flat color="transparent">
+    <v-card-title class="d-block custom-title text-center">
+      Comment ça marche ?
+    </v-card-title>
+
+    <v-container fluid>
+      <v-layout row>
+        <v-col
           v-for="({ img, title, text }, i) in how"
           :key="i"
-          class="d-flex flex-column justify-start align-center"
-          max-width="20%"
-          min-width="250px"
+          offset-sm="0"
+          sm="4"
+          offset="0"
+          cols="12"
         >
-          <v-img :src="img" max-width="200px" max-height="200px" />
-          <v-card-title class="black--text text-center text-break">{{
-            title
-          }}</v-card-title>
-          <v-card-text class="text-center body-1 text-break">{{
-            text
-          }}</v-card-text>
-        </v-card>
-      </v-card>
-    </v-card>
-  </div>
+          <v-card
+            flat
+            color="transparent"
+            class="d-flex flex-column align-center"
+          >
+            <v-img :src="img" max-width="175px" max-height="175px" />
+            <v-card-title class="pt-0 black--text text-center text-break">
+              {{ title }}
+            </v-card-title>
+            <v-card-text
+              class="text-center body-1 text-break"
+              style="max-width:400px"
+            >
+              {{ text }}
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-layout>
+    </v-container>
+  </v-card>
 </template>
 
 <script>
