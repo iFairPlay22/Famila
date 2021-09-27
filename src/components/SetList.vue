@@ -60,12 +60,12 @@
 
     <!-- Pagination -->
     <v-layout row justify="end">
-      <v-col offset-sm="6" sm="4" offset="0" cols="12">
+      <v-col cols="12">
         <v-pagination
           class="mb-10"
           v-model="pagination.currentPage"
+          :total-visible="pagination.resultsByPage"
           :length="nbPages"
-          :total-visible="6"
         >
         </v-pagination>
       </v-col>
