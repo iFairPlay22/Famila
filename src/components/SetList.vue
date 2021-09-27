@@ -98,8 +98,11 @@ export default {
         `https://my-bands-app.herokuapp.com/index.php/api/songs/Maitris%C3%A9e/${this.search}`
       )
         .then(response => response.json())
-        .then(json => (this.songs = json))
-        .catch(() => {});
+        .then(json => {
+          console.log(json);
+          this.songs = json;
+        })
+        .catch(e => console.error(e));
     }
   },
   computed: {
@@ -108,6 +111,7 @@ export default {
         (this.pagination.currentPage - 1) * this.pagination.resultsByPage;
       const lastIndex = startIndex + this.pagination.resultsByPage;
 
+  console.log(this.pagination.currentPage, this.pagination.resultsByPage, startIndex, lastIndex, this.songs)
       return this.songs.slice(startIndex, lastIndex);
     },
     nbPages() {
