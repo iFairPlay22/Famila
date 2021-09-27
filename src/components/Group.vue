@@ -4,30 +4,24 @@
       Un duo père / fils
     </v-card-title>
 
-    <v-container fluid>
-      <v-layout row>
-        <v-col
-          :offset-sm="i != 0 ? 0 : 1"
-          sm="5"
-          offset="0"
-          cols="12"
-          v-for="({ img, name, role }, i) in team"
-          :key="i"
+    <div class="d-flex flex-row justify-center align-center flex-wrap">
+      <v-card
+        color="transparent"
+        v-for="({ img, name, role }, i) in team"
+        :key="i"
+        class="ma-4 pa-4"
+      >
+        <v-img :src="img" position="contains" class="band-image" />
+        <v-card-title
+          class="black--text d-flex justify-center display-1 text-break pb-1"
         >
-          <v-card color="transparent">
-            <v-img :src="img" position="contains" />
-            <v-card-title
-              class="black--text d-flex justify-center display-1 text-break pb-1"
-            >
-              {{ name }}
-            </v-card-title>
-            <v-card-text class="text-center pb-2 body-1 text-break">
-              {{ role }}
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-layout>
-    </v-container>
+          {{ name }}
+        </v-card-title>
+        <v-card-text class="text-center pb-2 body-1 text-break">
+          {{ role }}
+        </v-card-text>
+      </v-card>
+    </div>
   </v-card>
 </template>
 
@@ -59,3 +53,52 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+@import "~vuetify/src/styles/styles.sass";
+
+@media #{map-get(
+    $display-breakpoints,
+    "xs-only"
+  )} {
+  .band-image {
+    max-width: inherit;
+  }
+}
+
+@media #{map-get(
+    $display-breakpoints,
+    "sm-only"
+  )} {
+  .band-image {
+    width: inherit;
+  }
+}
+
+@media #{map-get(
+    $display-breakpoints,
+    "md-only"
+  )} {
+  .band-image {
+    width: 400px;
+  }
+}
+
+@media #{map-get(
+    $display-breakpoints,
+    "lg-only"
+  )} {
+  .band-image {
+    width: 550px;
+  }
+}
+
+@media #{map-get(
+    $display-breakpoints,
+    "xl-only"
+  )} {
+  .band-image {
+    width: 750px;
+  }
+}
+</style>
