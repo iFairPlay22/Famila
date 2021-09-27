@@ -98,11 +98,8 @@ export default {
         `https://my-bands-app.herokuapp.com/index.php/api/songs/Maitris%C3%A9e/${this.search}`
       )
         .then(response => response.json())
-        .then(json => {
-          this.songs = json;
-          console.log(json);
-        })
-        .catch(error => console.error(error));
+        .then(json => (this.songs = json))
+        .catch(() => {});
     }
   },
   computed: {
