@@ -26,8 +26,8 @@
     </v-layout>
 
     <!-- Results -->
-    <v-layout row>
-      <div v-for="(showedSong, id) in showedSongs" :key="id">
+    <div v-for="(showedSong, id) in showedSongs" :key="id">
+      <v-layout row>
         <v-col offset-md="3" md="6" offset-sm="2" sm="8" offset="0" cols="12">
           <!-- Song -->
           <div :key="id">
@@ -52,8 +52,8 @@
             <v-divider></v-divider>
           </div>
         </v-col>
-      </div>
-    </v-layout>
+      </v-layout>
+    </div>
 
     <!-- Pagination -->
     <v-layout row justify="end">
@@ -102,7 +102,6 @@ export default {
         .catch(e => console.error(e));
     },
     updateShowedSongs() {
-      console.log("updateShowedSongs");
       if (this.songs.length == 0) {
         this.showedSongs = [];
         return;
