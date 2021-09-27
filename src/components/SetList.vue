@@ -104,7 +104,6 @@ export default {
   },
   computed: {
     showedSongs() {
-
       if (this.songs.length == 0) return [];
 
       const startIndex =
@@ -112,7 +111,14 @@ export default {
       const lastIndex = startIndex + this.pagination.resultsByPage;
 
       let showed = [];
-      for (let i = startIndex; i < lastIndex; i++) showed.push(this.songs[i]);
+      for (
+        let i = startIndex;
+        i < lastIndex && 0 <= i && i < this.songs.length;
+        i++
+      )
+        showed.push(this.songs[i]);
+
+        console.log(startIndex, lastIndex)
 
       return showed;
     },
