@@ -1,16 +1,9 @@
-# my-app-front
+# Famila 🎵
 
-## Project setup
-```
-npm install
-```
+## Contexte
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Création d'un site vitrine pour mettre en avant le groupe de musique "Famila".
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Projet
+
+Développement du site web avec VueJs.
